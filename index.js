@@ -60,7 +60,7 @@ function makePersonObject(id, name, email) {
  * the returned value should look like `Hello, my name is Leia`.
  */
 function getName(thisName) {
-  return "Hello, my name is " + thisName.name; /* code here */
+  return "Hello, my name is " + thisName.name;
 }
 
 /**
@@ -81,7 +81,7 @@ function makeSmartPerson(name) {
     name: name,
     sum: (num1, num2) => num1 + num2,
     speak: () => " Hello, my name is" + object.name
-  }; /* code here */
+  };
   return object;
 }
 
@@ -139,7 +139,7 @@ function get3rdCar(inventory) {
  * it will return `This is a Lincoln Navigator`.
  */
 function getCarInfoByIndex(inventory, index) {
-  return `This is a ${inventory[index].car_make} ${inventory[index].car_model}`; /* code here */
+  return `This is a ${inventory[index].car_make} ${inventory[index].car_model}`;
 }
 
 /**
@@ -302,8 +302,15 @@ const argTimesTwo = num => num * 2;
  *         (1) causes the odometer in the object to be increased by the distance,
  *         (2) returns the updated value of the `odometer`.
  */
-function carMaker(/* code here */) {
-  /* code here */
+function carMaker(miles) {
+  const car = {
+    odometer: miles,
+    drive: function(distance) {
+      this.odometer = distance + this.odometer;
+      return car.odometer;
+    }
+  };
+  return car;
 }
 
 /// ////// END OF CHALLENGE /////////
